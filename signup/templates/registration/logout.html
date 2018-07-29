@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logout</title>
+    {% include 'signup/script_logout.html' %}
+    <link rel="stylesheet" type="text/css" href="{% static 'signup/bootstrap-4.1.2-dist/css/bootstrap.min.css'%}"/>
+    <link rel="stylesheet"  type="text/css" href="{% static 'signup/signup.css' %}"/>
+</head>
+<body>
+{% include 'offers/navbar.html' %}
+<div class="conteiner">
+<h2>You have been successfully logged out.</h2>
+<h3>You should be redirected to home page in few seconds.</h3>
+<h4>If not click <a href="{% url 'home' %}"> Home, </a> To go back manualy.</h4>
+</div>
+</body>
+</html>

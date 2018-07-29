@@ -1,0 +1,43 @@
+.conteiner{
+    height: 500px ;
+    max-height: 600px;
+    width: 400px;
+    max-width: 500px;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 2;
+    text-align: center;
+    margin: auto;
+
+}
+.title{
+    margin: auto;
+    font-family: signinfont;
+    text-align: center;
+    font-size: 50px;
+
+}
+#1 .btn .btn-danger{
+    text-align: center !important;
+    border-radius: 12px !important;
+    width: 20% !important;
+    background-color: white !important;
+}
+@font-face {
+  font-family: 'signinfont';
+  src: url('../media/signinfont.otf')  format("truetype"),
+       local('signinfont');
+}
+body{
+
+background-image: url('../media/bg.jpg');
+    background-repeat: no-repeat;
+background-size: cover;
+}
+.info{
+    text-align: center;
+    margin: auto;
+}
+.boxproducts{
+
+}

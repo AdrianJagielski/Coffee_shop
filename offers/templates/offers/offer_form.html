@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'signup/bootstrap-4.1.2-dist/css/bootstrap.min.css'%}"/>
+    <link rel="stylesheet"  type="text/css" href="{% static 'signup/signup.css' %}"/>
+    <script src=”https://code.jquery.com/jquery-1.12.4.js”></script>
+<script src=”https://code.jquery.com/ui/1.12.1/jquery-ui.js”></script>
+
+</head>
+
+<body>
+
+{% include 'offers/navbar.html' %}
+<div class="title">
+New Offer
+</div>
+<div class="conteiner">
+<form method="POST">
+    {%  csrf_token%}
+    {{ form.provider_name.label }}:<br>
+
+    {{ form.provider_name }}<br>
+    {{ form.Offer_Price.label }}:<br>
+    {{ form.Offer_Price }}<br>
+    {{ form.Offer_Products.label }}:
+    <div class="boxproducts">
+    {{ form.Offer_Products }}
+        </div>
+    {{ form.Offer_Expiration_Date.label }}:
+    {{ form.Offer_Expiration_Date }}<br>
+    {{ form.Offer_Realization_Time.label }}(in days max 999):
+    {{ form.Offer_Realization_Time }}<br>
+    <button type="submit" class="btn btn-primary">Add Offer</button>
+</form>
+
+</div>
+</body>
+</html>

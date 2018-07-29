@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'signup/bootstrap-4.1.2-dist/css/bootstrap.min.css'%}"/>
+    <link rel="stylesheet"  type="text/css" href="{% static 'signup/signup.css' %}"/>
+</head>
+<body>
+
+{% include 'offers/navbar.html' %}
+<div class="title">
+New provider
+</div>
+<div class="conteiner">
+    <div class="info">
+        {% if invalid %}
+        {{ information }}
+        {% endif %}
+        </div>
+<form method="POST">
+    {%  csrf_token%}
+    {{ form.Provider_name.label }}:<br>
+    {{ form.Provider_name }}
+    {{ form.Provider_name.errors }}
+    <br>
+    {{ form.Provider_NIP.label }}(must be lenght of 10):<br>
+    {{ form.Provider_NIP }}<br>
+    {{ form.Provider_NIP.errors }}
+    {{ form.Provider_Phone.label }}( 7  up to 16 digits):<br>
+    {{ form.Provider_Phone }}
+    {{ form.Provider_Phone.errors }}
+    <br>
+    <button type="submit" class="btn btn-primary">Add provider</button>
+</form>
+
+</div>
+</body>
+</html>

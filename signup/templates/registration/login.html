@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'signup/bootstrap-4.1.2-dist/css/bootstrap.min.css'%}"/>
+        <link rel="stylesheet"  type="text/css" href="{% static 'signup/signup.css' %}"/>
+</head>
+<body>
+<div class="top">
+{% include "offers/navbar.html" %}
+</div>
+
+
+  <form method="post">
+    {% csrf_token %}
+      <div class="title">
+          <br>
+          Sign in!
+          </div>
+      <div class="info">
+
+      </div>
+      <br>
+        <div class="conteiner">
+        <center>
+
+      {{ form.as_p }}
+
+            <button type="submit" class="btn btn-danger">Login</button>
+            <br>
+            No account? No problem! <a href="{% url 'signup' %}">Sign up!</a>
+        </center>
+        </div>
+
+  </form>
+</body>
+</html>

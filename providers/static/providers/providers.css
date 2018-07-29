@@ -1,0 +1,32 @@
+body {
+    background-image: url('../media/bg.jpg');
+    background-repeat: no-repeat;
+background-size: cover;
+}
+table, th, td {
+    max-width: 300px;
+    margin: 0 auto;
+    word-wrap:break-word;
+    table-layout:auto;
+}
+.conteiner{
+
+
+
+text-align: center;
+    margin: auto;
+}
+.title{
+    margin: auto;
+    font-family: signinfont;
+    text-align: center;
+    font-size: 50px;
+
+}
+
+
+@font-face {
+  font-family: 'signinfont';
+  src: url('../media/signinfont.otf')  format("truetype"),
+       local('signinfont');
+}

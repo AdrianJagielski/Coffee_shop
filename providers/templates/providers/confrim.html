@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'signup/bootstrap-4.1.2-dist/css/bootstrap.min.css'%}"/>
+    <link rel="stylesheet"  type="text/css" href="{% static 'signup/signup.css' %}"/>
+</head>
+<body>
+{% include 'offers/navbar.html' %}
+<div class="title">
+          <br>
+          Confirmation
+          </div>
+<div class="conteiner">
+<form method="POST">
+    {% csrf_token %}
+    Are u sure to remove <i>'{{ Providers.Provider_name }}' </i> from your providers list?<br>
+    This action cannot be undone.<br>
+    <button type="submit" class="btn btn-danger">Confirm</button>
+</form>
+</div>
+
+</body>
+</html>

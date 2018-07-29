@@ -1,0 +1,80 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Offers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="{% static 'offers/offer.css'%}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'signup/bootstrap-4.1.2-dist/css/bootstrap.min.css'%}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'signup/bootstrap-4.1.2-dist/js/bootstrap.min.js'%}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+{% include "offers/navbar.html" %}
+
+
+
+<div class="container">
+<br>
+<div class="conteiner">
+    <br>
+    <div class="title">
+
+        <h3>Your offers</h3>
+          </div>
+</div>
+<form method="GET" action="">
+    <input type="text" name="q" placeholder="Search" value="{{request.GET.q}}">
+    <input type="submit" value="Search">
+    <input type="submit" class="btn" value="Show all offers" name="mybtn">
+    <input type="submit" class="btn" value="Show actual offers" name="mybtn1">
+    <input type="submit" class="btn" value="Sort by price&uarr;" name="mybtn2">
+    <input type="submit" class="btn" value="Sort by price&darr;" name="mybtn3">
+    <input type="submit" class="btn" value="Sort by name&uarr;" name="mybtn4">
+    <input type="submit" class="btn" value="Sort by name&darr;" name="mybtn5">
+</form>
+
+
+<table id ="myTable" class="table table-dark table-striped">
+    <thead>
+            <tr>
+                <th > Name </th>
+                <th > Price </th>
+                <th> Products </th>
+                <th> Realization Time </th>
+                <th>NIP</th>
+                <th>Phone</th>
+                <th>Published</th>
+                <th>Expire</th>
+            </tr>
+        </thead>
+<tbody>
+    {%  for offer in Offers  %}
+
+
+            <tr>
+                <th>{{ offer.provider_name }}</th>
+                <th>{{ offer.Offer_Price }}</th>
+                <th>{{ offer.Offer_Products }}</th>
+                <th>{{ offer.Offer_Realization_Time }} Day(s)</th>
+                <th> {{ offer.getnip }}</th>
+                <th> {{ offer.getphone }}</th>
+                <th>{{ offer.Offer_Date_Published}}</th>
+                <th>{{ offer.Offer_Expiration_Date }}</th>
+            </tr>
+
+            {% endfor %}
+</tbody>
+
+</table>
+<a href ="{% url 'new_offer' %}" class="btn btn-primary" role="button"> >>New offer<<</a>
+</div>
+
+</body>
+</html>

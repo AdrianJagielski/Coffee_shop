@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Signup</title>
+
+
+
+
+        <link rel="stylesheet" type="text/css" href="{% static 'signup/bootstrap-4.1.2-dist/css/bootstrap.min.css'%}"/>
+        <link rel="stylesheet"  type="text/css" href="{% static 'signup/signup.css' %}"/>
+
+</head>
+<body>
+<div class="top">
+{% include "offers/navbar.html" %}
+</div>
+
+  <form method="post">
+    {% csrf_token %}
+      <div class="title">
+          <br>
+          Sign up
+          </div>
+
+      <br>
+        <div class="conteiner">
+        <center>
+      {{ form.username.label }}:
+            <br>
+      {{ form.username }}
+            <br>
+      {{ form.password1.label }}:
+            <br>
+      {{ form.password1 }}
+            <br>
+      {{ form.password2.label }}:
+            <br>
+      {{ form.password2 }}
+            <br>
+
+            <button type="submit" class="btn btn-danger">Sign up</button>
+            <br>
+            Got an account? <a href="{% url 'login' %}">Login!</a>
+        </center>
+        </div>
+
+  </form>
+
+</body>
+</html>
